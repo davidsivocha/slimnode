@@ -16,7 +16,7 @@ exports.index = function(req, res){
 				var each = files[i];
 				var article = articles + '/' + each;
 				var data = fs.readFileSync(article, 'utf-8');
-				var array = data.toString().split("\n \n");
+				var array = data.toString().split("\n\n");
 				var parsed = JSON.parse(array[0]);
 				titles[parsed.slug] = parsed.title;
 			}
@@ -35,7 +35,7 @@ exports.article = function(req, res){
 		if (err){
 			res.render('error', { title: '404'});
 		} else {
-			var array = data.toString().split("\n \n");
+			var array = data.toString().split("\n\n");
 			var parsed = JSON.parse(array[0]);
 			var output = markdown.toHTML(array[1]);
 			res.render('article', { title: parsed.title, body: output });
