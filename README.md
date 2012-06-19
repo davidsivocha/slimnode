@@ -47,3 +47,9 @@ Templates are all controlled by [jade](http://jade-lang.com/) and there are 4 Ma
 - `index.jade` - This is the article list page
 - `article.jade` - This is a page that displays the articles
 - `about.jade` - This is a static page that is used for the about. 
+
+
+About SlimNode
+========
+Inpsired by an article on [NetTuts](http://net.tutsplus.com) for a static file blog in PHP, I thought to myself "that would be way more badass in node". This is the result.
+This repo is maintained by @davidsivocha. [Sivocha.com](http://sivocha.com)/[ThreeHive](http://threehive.co.uk).
