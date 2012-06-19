@@ -1,4 +1,0 @@
-TODO: Read Directory View logic
-TODO: Read File View Logic
-TODO: File Display (template in Jade)
-TODO: Static Page Templates and format
