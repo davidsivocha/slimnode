@@ -6,7 +6,7 @@ var fs = require('fs')
 exports.index = function(req, res){
 	fs.readdir(articles, function(err,files){
 		if (err){
-			res.render('error', { title: 'Error' });
+			res.render('error', { title: 'Unable to read directory!'});
 		} else {
 			var titles = {};
 			files.sort(function(a, b) {
@@ -33,7 +33,7 @@ exports.article = function(req, res){
 	var article = articles + '/' + req.params.article + '.txt'
 	fs.readFile(article, 'utf-8', function(err, data){
 		if (err){
-			res.render('error', { title: 'Error' });
+			res.render('error', { title: '404'});
 		} else {
 			var array = data.toString().split("\n \n");
 			var parsed = JSON.parse(array[0]);
