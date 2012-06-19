@@ -4,6 +4,6 @@
 
 var settings = {};
 
-settings.sitename = "DaveZilla";
+settings.sitename = "The DaveZilla Blog";
 
 module.exports = settings;
