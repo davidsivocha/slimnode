@@ -25,7 +25,9 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+app.get('/about', routes.about);
+app.get('/:article', routes.article);
 
-http.createServer(app).listen(3000);
+http.createServer(app).listen(8080);
 
-console.log("Express server listening on port 3000");
+console.log("Express server listening on port 8080");
