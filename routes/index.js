@@ -25,19 +25,18 @@ exports.index = function(req, res){
 };
 
 exports.about = function(req, res){
-  res.render('about', { title: 'About' });
+	res.render('about', { title: 'About' });
 };
 
 exports.article = function(req, res){
-  var article = articles + '/' + req.params.article + '.txt'
-  fs.readFile(article, 'utf-8', function(err, data){
-  	if (err){
-  		res.render('error', { title: 'Error' });
-  	} else {
-  		var array = data.toString().split("\n \n");
-  		var parsed = JSON.parse(array[0]);
-  		res.render('article', { title: parsed.title });
-  	}
-  });
-  
+	var article = articles + '/' + req.params.article + '.txt'
+	fs.readFile(article, 'utf-8', function(err, data){
+		if (err){
+			res.render('error', { title: 'Error' });
+		} else {
+			var array = data.toString().split("\n \n");
+			var parsed = JSON.parse(array[0]);
+			res.render('article', { title: parsed.title, body: array[1] });
+		}
+	});
 };
