@@ -1,7 +1,7 @@
 {
-   "title" : "This is my first article",
+   "title" : "This is my Second article",
    "date"  : "02/15/2012",
-   "slug"  : "first-article",
+   "slug"  : "second-article",
    "author": "Author name"
 }
  
