@@ -1,6 +1,7 @@
 var articles = './articles';
-var fs = require('fs');
-var settings = require('../settings');
+var fs = require('fs')
+	, markdown = require('markdown').markdown
+	, settings = require('../settings');
 
 exports.index = function(req, res){
 	fs.readdir(articles, function(err,files){
@@ -36,7 +37,8 @@ exports.article = function(req, res){
 		} else {
 			var array = data.toString().split("\n \n");
 			var parsed = JSON.parse(array[0]);
-			res.render('article', { title: parsed.title, body: array[1] });
+			var output = markdown.toHTML(array[1]);
+			res.render('article', { title: parsed.title, body: output });
 		}
 	});
 };
