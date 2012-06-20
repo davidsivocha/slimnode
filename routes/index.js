@@ -19,7 +19,7 @@ exports.index = function(req, res){
 				var data = fs.readFileSync(article, 'utf-8');
 				var array = data.toString().split("\n\n");
 				var parsed = JSON.parse(array[0]);
-				titles[parsed.date+"/"+parsed.slug] = parsed.title;
+				titles[parsed.date+"/"+parsed.slug] = parsed;
 			}
 			res.render('index', { title: 'Home', titles: titles, settings: settings});
 		}
@@ -76,17 +76,17 @@ exports.archive = function(req, res){
 				var date = parsed.date.split("/");
 				if(req.params.day){
 					if (date[0] === req.params.year && date[1] === req.params.month && date[2] === req.params.day){
-						titles[parsed.date+"/"+parsed.slug] = parsed.title;
+						titles[parsed.date+"/"+parsed.slug] = parsed;
 					}
 					title = req.params.day + "/" + req.params.month + "/" + req.params.year + " Archive"
 				}else if(req.params.month){
 					if (date[0] === req.params.year && date[1] === req.params.month){
-						titles[parsed.date+"/"+parsed.slug] = parsed.title;
+						titles[parsed.date+"/"+parsed.slug] = parsed;
 					}
 					title = req.params.month + "/" + req.params.year + " Archive"
 				}else{
 					if (date[0] === req.params.year){
-						titles[parsed.date+"/"+parsed.slug] = parsed.title;
+						titles[parsed.date+"/"+parsed.slug] = parsed;
 					}
 					title = req.params.year + " Archive"
 				}
