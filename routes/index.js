@@ -61,65 +61,37 @@ exports.article = function(req, res){
 };
 
 exports.archive = function(req, res){
-	if(req.params.day){
-		fs.readdir(articles, function(err, files){
-			if (err){
-				res.render('error', { title: 'Unable to read directory!', settings:settings});
-			} else {
-				var titles = {};
-				for(var i = 0; i < files.length; i++ ){
-					var each = files[i];
-					var article = articles + '/' + each;
-					var data = fs.readFileSync(article, 'utf-8');
-					var array = data.toString().split("\n\n");
-					var parsed = JSON.parse(array[0]);
-					var date = parsed.date.split("/");
+	fs.readdir(articles, function(err, files){
+		if (err){
+			res.render('error', { title: 'Unable to read directory!', settings:settings});
+		} else {
+			var titles = {};
+			var title = "";
+			for(var i = 0; i < files.length; i++ ){
+				var each = files[i];
+				var article = articles + '/' + each;
+				var data = fs.readFileSync(article, 'utf-8');
+				var array = data.toString().split("\n\n");
+				var parsed = JSON.parse(array[0]);
+				var date = parsed.date.split("/");
+				if(req.params.day){
 					if (date[0] === req.params.year && date[1] === req.params.month && date[2] === req.params.day){
 						titles[parsed.date+"/"+parsed.slug] = parsed.title;
 					}
-				}
-				res.render('index', { title: req.params.day + "/" + req.params.month + "/" + req.params.year + " Archive" , titles: titles, settings: settings});
-			}
-		});
-	} else if(req.params.month){
-		fs.readdir(articles, function(err, files){
-			if (err){
-				res.render('error', { title: 'Unable to read directory!', settings:settings});
-			} else {
-				var titles = {};
-				for(var i = 0; i < files.length; i++ ){
-					var each = files[i];
-					var article = articles + '/' + each;
-					var data = fs.readFileSync(article, 'utf-8');
-					var array = data.toString().split("\n\n");
-					var parsed = JSON.parse(array[0]);
-					var date = parsed.date.split("/");
+					title = req.params.day + "/" + req.params.month + "/" + req.params.year + " Archive"
+				}else if(req.params.month){
 					if (date[0] === req.params.year && date[1] === req.params.month){
 						titles[parsed.date+"/"+parsed.slug] = parsed.title;
 					}
-				}
-				res.render('index', { title: req.params.month + "/" + req.params.year + " Archive" , titles: titles, settings: settings});
-			}
-		});
-	} else if(req.params.year){
-		fs.readdir(articles, function(err, files){
-			if (err){
-				res.render('error', { title: 'Unable to read directory!', settings:settings});
-			} else {
-				var titles = {};
-				for(var i = 0; i < files.length; i++ ){
-					var each = files[i];
-					var article = articles + '/' + each;
-					var data = fs.readFileSync(article, 'utf-8');
-					var array = data.toString().split("\n\n");
-					var parsed = JSON.parse(array[0]);
-					var date = parsed.date.split("/");
+					title = req.params.month + "/" + req.params.year + " Archive"
+				}else{
 					if (date[0] === req.params.year){
 						titles[parsed.date+"/"+parsed.slug] = parsed.title;
 					}
+					title = req.params.year + " Archive"
 				}
-				res.render('index', { title: req.params.year + " Archive" , titles: titles, settings: settings});
 			}
-		});
-	}
+			res.render('index', { title: title , titles: titles, settings: settings});
+		}
+	});
 };
