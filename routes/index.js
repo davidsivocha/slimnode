@@ -1,4 +1,5 @@
 var articles = './articles';
+var static = './static';
 var fs = require('fs')
 	, markdown = require('markdown').markdown
 	, settings = require('../settings');
@@ -6,7 +7,7 @@ var fs = require('fs')
 exports.index = function(req, res){
 	fs.readdir(articles, function(err,files){
 		if (err){
-			res.render('error', { title: 'Unable to read directory!'});
+			res.render('error', { title: 'Unable to read directory!', settings:settings});
 		} else {
 			var titles = {};
 			files.sort(function(a, b) {
@@ -26,14 +27,23 @@ exports.index = function(req, res){
 };
 
 exports.about = function(req, res){
-	res.render('about', { title: 'About', settings: settings});
+	var page = static + '/about.txt'
+	fs.readFile(page, 'utf-8', function(err, data){
+		if (err){
+			res.render('error', { title: '404', settings:settings});
+		} else {
+			var doc = data.toString();
+			var output = markdown.toHTML(doc);
+			res.render('page', {title:'About', body: output, settings: settings});
+		}
+	});
 };
 
 exports.article = function(req, res){
 	var article = articles + '/' + req.params.article + '.txt'
 	fs.readFile(article, 'utf-8', function(err, data){
 		if (err){
-			res.render('error', { title: '404'});
+			res.render('error', { title: '404', settings:settings});
 		} else {
 			var array = data.toString().split("\n\n");
 			var parsed = JSON.parse(array[0]);
