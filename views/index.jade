@@ -3,7 +3,7 @@ extends layout
 block content
   div.span12
     h1= title
-    p Welcome to #{settings.sitename}
+    p Recent Articles
     each val, key in titles
-      li
-        a(href='/#{key}')#{val}
+      a(href='/#{key}')
+        h2= val

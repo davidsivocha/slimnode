@@ -15,10 +15,10 @@ To install, copy to your server and run `npm install` to ensure that the depende
 Blog articles need to be saved to the Articles folder. The application reads the contents of the folder and the files to generate lists and data for the application. They use the format as shown below.
 
 	{
-	   "title" : "Article Title",
-	   "date"  : "02/15/2012",
-	   "slug"  : "first-article",
-	   "author": "Author name"
+	   "Title" : "Article Title",
+	   "Date"  : "02/15/2012",
+	   "Slug"  : "first-article",
+	   "Author": "Author name"
 	}
 
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

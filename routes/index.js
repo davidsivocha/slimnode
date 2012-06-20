@@ -19,7 +19,7 @@ exports.index = function(req, res){
 				var data = fs.readFileSync(article, 'utf-8');
 				var array = data.toString().split("\n\n");
 				var parsed = JSON.parse(array[0]);
-				titles[parsed.slug] = parsed.title;
+				titles[parsed.slug] = parsed.Title;
 			}
 			res.render('index', { title: 'Home', titles: titles, settings: settings});
 		}
@@ -48,7 +48,7 @@ exports.article = function(req, res){
 			var array = data.toString().split("\n\n");
 			var parsed = JSON.parse(array[0]);
 			var output = markdown.toHTML(array[1]);
-			res.render('article', { title: parsed.title, body: output, settings: settings, meta:parsed});
+			res.render('article', { title: parsed.Title, body: output, settings: settings, meta:parsed});
 		}
 	});
 };
