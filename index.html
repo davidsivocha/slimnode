@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Slim Node : A recreation of Slim Blog in NodeJS" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Slim Node</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/davidsivocha/slimnode">View on GitHub</a>
+
+          <h1 id="project_title">Slim Node</h1>
+          <h2 id="project_tagline">A recreation of Slim Blog in NodeJS</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/davidsivocha/slimnode/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/davidsivocha/slimnode/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>SlimNode</h1>
+
+<p>A recreation of <a href="https://github.com/davidsivocha/slimblog">SlimBlog</a> in NodeJS.</p>
+
+<h1>What is SlimNode</h1>
+
+<p>Slim Node is a blog engine that makes use of Markdown flat files as a blogging engine, making it easy to update and edit, without having to worry about having a chunky CMS like wordpress or Drupal to manage your content. It is quick and light and the entire application logic (not including node dependencies) is only 56kb in size.</p>
+
+<p>You can use Git to push updates to the articles folder, making it easy to update.</p>
+
+<h1>How to use</h1>
+
+<p>To install, copy to your server and run <code>npm install</code> to ensure that the dependencies are installed. Then run <code>node app.js</code> to start your blog.</p>
+
+<p>Blog articles need to be saved to the Articles folder. The application reads the contents of the folder and the files to generate lists and data for the application. They use the format as shown below.</p>
+
+<pre><code>{
+   "title" : "Article Title",
+   "date"  : "2012/02/15",
+   "slug"  : "first-article",
+   "author": "Author name"
+}
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</code></pre>
+
+<p>You can add as much data as you want into the JSON field data at the top. Feel free to make your own extensions using the data that you provide.
+Currently the only <em>required</em> fields are the <code>title</code>, <code>date</code> and <code>slug</code> fields. Articles should be saved using the date combined with the slug. So if you call the article <code>A guide to blogging online</code> and you give it the slug <code>blogging-online</code> and the date as <code>2012/02/15</code> you should save it as <code>2012-02-15-blogging-online.txt</code>. </p>
+
+<p>The <code>date</code> field should be formatted as <code>YYYY/MM/DD</code>.</p>
+
+<p>The slugs are identifiers to point at the file.</p>
+
+<h1>Additional notes:</h1>
+
+<p>The blog articles should be constructed in Markdown. This provides formatting. 
+If you want to include images in your articles upload them to the <code>public/images</code> folder. To link to them use <code>![Alt Text](/image/yourimage.jpg "Optional title")</code> </p>
+
+<p>Other than that, enjoy. If you have any issues or need any help raise an issue!</p>
+
+<h1>Templating</h1>
+
+<p>Templates are all controlled by <a href="http://jade-lang.com/">jade</a> and there are 4 Main files for you to worry about.</p>
+
+<ul>
+<li>
+<code>layout.jade</code> - This controls the main layout of the page and the stylesheets and JS includes</li>
+<li>
+<code>index.jade</code> - This is the article list page</li>
+<li>
+<code>article.jade</code> - This is a page that displays the articles</li>
+<li>
+<code>about.jade</code> - This is a static page that is used for the about. </li>
+</ul><h1>Url Structure</h1>
+
+<ul>
+<li>
+<code>/</code> - This routes to the full list</li>
+<li>
+<code>/blog</code> - This routes to the full list</li>
+<li>
+<code>/blog/:year</code> - This displays an archive listing by year</li>
+<li>
+<code>/blog/:year/:month</code> - This displays an archive listing by month</li>
+<li>
+<code>/blog/:year/:month/:day</code> - This displays an archive listing by day</li>
+<li>
+<code>/blog/:year/:month/:day/:article</code> - This is the permalink structure to an article</li>
+<li>
+<code>/page/:page</code> - This is a link to a static page</li>
+</ul><h1>About SlimNode</h1>
+
+<p>Inpsired by an article on <a href="http://net.tutsplus.com">NetTuts</a> for a static file blog in PHP, I thought to myself "that would be way more badass in node". This is the result.
+This repo is maintained by <a href="https://github.com/davidsivocha" class="user-mention">@davidsivocha</a>. <a href="http://sivocha.com">Sivocha.com</a>/<a href="http://threehive.co.uk">ThreeHive</a>.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Slim Node maintained by <a href="https://github.com/davidsivocha">davidsivocha</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
