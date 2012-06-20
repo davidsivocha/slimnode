@@ -1,9 +1,9 @@
 {
-   "Title" : "This is my Second article",
-   "Date"  : "02/15/2012",
-   "Slug"  : "second-article",
-   "Author": "David Sivocha",
-   "Test": "This is test data"
+   "title" : "This is my Second article",
+   "date"  : "02/15/2012",
+   "slug"  : "second-article",
+   "author": "David Sivocha",
+   "test": "This is test data"
 }
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

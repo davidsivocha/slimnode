@@ -1,8 +1,8 @@
 {
-   "Title" : "This is my first article",
-   "Date"  : "02/15/2012",
-   "Slug"  : "first-article",
-   "Author": "David Sivocha"
+   "title" : "This is my first article",
+   "date"  : "02/15/2012",
+   "slug"  : "first-article",
+   "author": "David Sivocha"
 }
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
