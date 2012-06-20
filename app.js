@@ -29,7 +29,9 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.get('/page/:page', routes.page);
-app.get('/blog/:article', routes.article);
+app.get('/blog', routes.index);
+app.get('/blog/:year?/:month?/:day?', routes.archive);
+app.get('/blog/:year/:month/:day/:article', routes.article);
 
 if(settings.development){
   //runs on port 8080 if development mode

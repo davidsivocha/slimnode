@@ -1,6 +1,6 @@
 {
    "title" : "Hurray for articles!",
-   "date"  : "02/15/2012",
+   "date"  : "2012/02/15",
    "slug"  : "first-article",
    "author": "David Sivocha"
 }

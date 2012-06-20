@@ -10,5 +10,6 @@ block content
       each val, key in meta
         p
           #{key}: #{val}
+      p Permalink to this article: #{settings.url}/blog/#{meta.date}/#{meta.slug}
     p
       a(href='/').btn Back to Article list

@@ -16,7 +16,7 @@ Blog articles need to be saved to the Articles folder. The application reads the
 
 	{
 	   "title" : "Article Title",
-	   "date"  : "02/15/2012",
+	   "date"  : "2012/02/15",
 	   "slug"  : "first-article",
 	   "author": "Author name"
 	}
@@ -29,7 +29,9 @@ Blog articles need to be saved to the Articles folder. The application reads the
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 You can add as much data as you want into the JSON field data at the top. Feel free to make your own extensions using the data that you provide.
-Currently the only _required_ field is the `title` and `slug` field. Articles should be saved using the same name as you give the slug. So if you call the article `A guide to blogging online` and you give it the slug `blogging-online` you should save it as `blogging-online.txt`. 
+Currently the only _required_ fields are the `title`, `date` and `slug` fields. Articles should be saved using the date combined with the slug. So if you call the article `A guide to blogging online` and you give it the slug `blogging-online` and the date as `2012/02/15` you should save it as `2012-02-15-blogging-online.txt`. 
+
+The `date` field should be formatted as `YYYY/MM/DD`.
 
 The slugs are identifiers to point at the file.
 
@@ -47,6 +49,16 @@ Templates are all controlled by [jade](http://jade-lang.com/) and there are 4 Ma
 - `index.jade` - This is the article list page
 - `article.jade` - This is a page that displays the articles
 - `about.jade` - This is a static page that is used for the about. 
+
+Url Structure
+========
+- `/` - This routes to the full list
+- `/blog` - This routes to the full list
+- `/blog/:year` - This displays an archive listing by year
+- `/blog/:year/:month` - This displays an archive listing by month
+- `/blog/:year/:month/:day` - This displays an archive listing by day
+- `/blog/:year/:month/:day/:article` - This is the permalink structure to an article
+- `/page/:page` - This is a link to a static page
 
 
 About SlimNode
