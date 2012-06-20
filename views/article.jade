@@ -6,8 +6,9 @@ block content
     != body
   div.span4
     h3 About the Article
-    each val, key in meta
-      p
-        #{key}: #{val}
+    div.well
+      each val, key in meta
+        p
+          #{key}: #{val}
     p
       a(href='/').btn Back to Article list

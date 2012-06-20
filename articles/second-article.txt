@@ -1,5 +1,5 @@
 {
-   "title" : "This is my Second article",
+   "title" : "A New Article",
    "date"  : "02/15/2012",
    "slug"  : "second-article",
    "author": "David Sivocha",
