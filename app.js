@@ -6,6 +6,8 @@
 var express = require('express')
   , routes = require('./routes')
   , fs = require('fs')
+  , settings = require('./settings')
+  , port = 8080
   , http = require('http');
 
 var app = express();
@@ -26,9 +28,17 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/about', routes.about);
-app.get('/:article', routes.article);
+app.get('/page/:page', routes.page);
+app.get('/blog/:article', routes.article);
 
-http.createServer(app).listen(8080);
+if(settings.development){
+  //runs on port 8080 if development mode
+  port = 8080;
+} else {
+  //runs on port 80 if production mode
+  port = 80;
+}
 
-console.log("Express server listening on port 8080");
+http.createServer(app).listen(port);
+
+console.log("Express server listening on port " + port);

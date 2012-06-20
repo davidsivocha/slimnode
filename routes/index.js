@@ -26,15 +26,19 @@ exports.index = function(req, res){
 	});
 };
 
-exports.about = function(req, res){
-	var page = static + '/about.txt'
+exports.page = function(req, res){
+	var page = static + '/' + req.params.page + '.txt'
 	fs.readFile(page, 'utf-8', function(err, data){
 		if (err){
 			res.render('error', { title: '404', settings:settings});
 		} else {
-			var doc = data.toString();
-			var output = markdown.toHTML(doc);
-			res.render('page', {title:'About', body: output, settings: settings});
+			var doc = data.toString().split("\n\n");
+			var parsed = JSON.parse(doc[0]);
+			var output = ""
+			for(var i = 1; i < doc.length; i++){
+				output += markdown.toHTML(doc[i]);
+			}
+			res.render('page', {title:parsed.title, body: output, settings: settings});
 		}
 	});
 };
@@ -45,9 +49,12 @@ exports.article = function(req, res){
 		if (err){
 			res.render('error', { title: '404', settings:settings});
 		} else {
-			var array = data.toString().split("\n\n");
-			var parsed = JSON.parse(array[0]);
-			var output = markdown.toHTML(array[1]);
+			var doc = data.toString().split("\n\n");
+			var parsed = JSON.parse(doc[0]);
+			var output = ""
+			for(var i = 1; i < doc.length; i++){
+				output += markdown.toHTML(doc[i]);
+			}
 			res.render('article', { title: parsed.title, body: output, settings: settings, meta:parsed});
 		}
 	});
