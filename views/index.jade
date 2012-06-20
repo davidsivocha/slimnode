@@ -1,8 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  each val, key in titles
-    li
-      a(href='/#{key}')#{val}
+  div.span12
+    h1= title
+    p Welcome to #{settings.sitename}
+    each val, key in titles
+      li
+        a(href='/#{key}')#{val}

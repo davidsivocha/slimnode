@@ -2,7 +2,7 @@
    "title" : "This is my first article",
    "date"  : "02/15/2012",
    "slug"  : "first-article",
-   "author": "Author name"
+   "author": "David Sivocha"
 }
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

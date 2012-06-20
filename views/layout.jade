@@ -1,10 +1,20 @@
-!!!
+!!! 5
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title #{settings.sitename} - #{title}
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    style(type='text/css')
+      body{padding-top:60px;}
   body
-    p
-      a(href='/') Home
-      a(href='/about') About
-    block content
+    div.navbar.navbar-fixed-top
+      div.navbar-inner
+        div.container
+          a.brand(href='/') #{settings.sitename}
+          ul.nav
+            li
+              a(href='/') Home
+            li
+              a(href='/about') About
+    div.container
+      div.row
+        block content

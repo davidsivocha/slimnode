@@ -20,13 +20,13 @@ exports.index = function(req, res){
 				var parsed = JSON.parse(array[0]);
 				titles[parsed.slug] = parsed.title;
 			}
-			res.render('index', { title: settings.sitename, titles: titles});
+			res.render('index', { title: 'Home', titles: titles, settings: settings});
 		}
 	});
 };
 
 exports.about = function(req, res){
-	res.render('about', { title: 'About' });
+	res.render('about', { title: 'About', settings: settings});
 };
 
 exports.article = function(req, res){
@@ -38,7 +38,7 @@ exports.article = function(req, res){
 			var array = data.toString().split("\n\n");
 			var parsed = JSON.parse(array[0]);
 			var output = markdown.toHTML(array[1]);
-			res.render('article', { title: parsed.title, body: output });
+			res.render('article', { title: parsed.title, body: output, settings: settings, meta:parsed});
 		}
 	});
 };

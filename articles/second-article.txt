@@ -2,10 +2,10 @@
    "title" : "This is my Second article",
    "date"  : "02/15/2012",
    "slug"  : "second-article",
-   "author": "Author name"
+   "author": "David Sivocha",
+   "test": "This is test data"
 }
 
-# Title #
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
