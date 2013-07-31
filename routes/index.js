@@ -38,7 +38,7 @@ exports.page = function(req, res){
 			for(var i = 1; i < doc.length; i++){
 				output += markdown.toHTML(doc[i]);
 			}
-			res.render('page', {title:parsed.title, body: output, settings: settings});
+			res.render(parsed.template, {title:parsed.title, body: output, settings: settings});
 		}
 	});
 };
