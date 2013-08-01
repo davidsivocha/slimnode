@@ -1,5 +1,6 @@
 {
-   "title" : "About SlimNode"
+   "title" : "About SlimNode",
+   "template" : "page"
 }
 
 SlimNode
