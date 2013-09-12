@@ -1,10 +1,12 @@
 SlimNode
 ========
-A recreation of [SlimBlog](https://github.com/davidsivocha/slimblog) in NodeJS.
+A NodeJS Blogging engine, using flat files and Markdown
 
 What is SlimNode
 ========
 Slim Node is a blog engine that makes use of Markdown flat files as a blogging engine, making it easy to update and edit, without having to worry about having a chunky CMS like wordpress or Drupal to manage your content. It is quick and light and the entire application logic (not including node dependencies) is only 56kb in size.
+
+It is based off of [SlimBlog](http://davidsivocha.github.com/slimblog), which is a Flat File PHP Blogging system. 
 
 You can use Git to push updates to the articles folder, making it easy to update.
 
