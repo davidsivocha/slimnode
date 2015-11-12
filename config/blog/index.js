@@ -1,5 +1,5 @@
-var articles = '../articles';
-var static = '../static';
+var articles = '../../articles';
+var static = '../../static';
 var fs = require('fs')
 	, markdown = require('markdown').markdown
 	, settings = require('../settings');
@@ -7,6 +7,7 @@ var fs = require('fs')
 exports.index = function(req, res){
 	fs.readdir(articles, function(err,files){
 		if (err){
+			console.log(err);
 			res.render('error', { title: 'Unable to read directory!', settings:settings});
 		} else {
 			var titles = {};
