@@ -1,5 +1,5 @@
-var articles = './articles';
-var static = './static';
+var articles = '../articles';
+var static = '../static';
 var fs = require('fs')
 	, markdown = require('markdown').markdown
 	, settings = require('../settings');

@@ -11,6 +11,8 @@
     "fs": "0.0.2",
     "http": "0.0.0",
     "jade": "^1.11.0",
-    "markdown": "^0.5.0"
+    "markdown": "^0.5.0",
+    "method-override": "^2.3.5",
+    "nodemon": "^1.8.1"
   }
 }

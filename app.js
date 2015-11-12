@@ -1,8 +1,10 @@
 var express = require('express')
-  , router = require('./config/router')
   , fs = require('fs')
-  , settings = require('./config/settings')
   , http = require('http')
+  , router = require('./config/routes')
+  , settings = require('./config/settings')
+  , bodyParser = require('body-parser')
+  , methodOverride = require('method-override')
   , port = process.env.PORT || 8080
   , app = express();
 
