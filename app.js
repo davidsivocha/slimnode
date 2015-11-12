@@ -1,18 +1,12 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express')
-  , routes = require('./routes')
+  , routes = require('./config/routes')
   , fs = require('fs')
-  , settings = require('./settings')
-  , port = 8080
-  , http = require('http');
+  , settings = require('./config/settings')
+  , port = process.env.PORT || 8080
+  , http = require('http')
+  , app = express();
 
-var app = express();
-
-app.configure(function(){
+app.configure(function () {
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
@@ -23,7 +17,7 @@ app.configure(function(){
   app.use(app.router);
 });
 
-app.configure('development', function(){
+app.configure('development', function () {
   app.use(express.errorHandler());
 });
 
@@ -43,4 +37,4 @@ if(settings.development){
 
 http.createServer(app).listen(port);
 
-console.log("Express server listening on port " + port);
+console.log('Express server listening on port', port);
