@@ -6,8 +6,11 @@
     "start": "node app"
   },
   "dependencies": {
-    "express": "3.0.0alpha1",
-    "jade": "*",
-    "markdown": "*"
+    "body-parser": "^1.14.1",
+    "express": "^3.0.0-alpha1",
+    "fs": "0.0.2",
+    "http": "0.0.0",
+    "jade": "^1.11.0",
+    "markdown": "^0.5.0"
   }
 }
