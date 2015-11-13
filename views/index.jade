@@ -1,13 +1,14 @@
 extends layout
 
 block content
-  div.span12
-    h1= title
-    p Recent Articles
-    each val, key in titles
-      div.row
-        div.span6
-          a(href='/blog/#{key}')
-            h2= val.title
-        div.span6
-          h3= val.date
+  div.row
+    div.col-xs-12
+      h1= title
+      p Recent Articles
+      each val, key in titles
+        div.row
+          div.col-xs-6
+            a(href='/blog/#{key}')
+              h2= val.title
+          div.col-xs-6
+            h3= val.date

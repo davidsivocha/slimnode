@@ -1,15 +1,17 @@
 extends layout
 
 block content
-  div.span8
-    h1= title
-    != body
-  div.span4
-    h3 About the Article
-    div.well
-      each val, key in meta
-        p
-          #{key}: #{val}
-      p Permalink to this article: #{settings.url}blog/#{meta.date}/#{meta.slug}
-    p
-      a(href='/').btn Back to Article list
+  div.row
+    div.col-xs-12.col-md-8
+      h1= title
+      != body
+    div.col-xs-12.col-md-4
+      h3 About the Article
+      div.well
+        each val, key in meta
+          p= key + ' : ' + val
+        p Permalink to this article:
+          br
+          a(href="#{settings.url}blog/#{meta.date}/#{meta.slug}") #{settings.url}blog/#{meta.date}/#{meta.slug}
+      p
+        a(href='/').btn.btn-primary Back to Article list
