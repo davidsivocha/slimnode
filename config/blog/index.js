@@ -1,5 +1,5 @@
-var articles = './articles';
-var static = './static';
+var articles = '../../articles';
+var static = '../../static';
 var fs = require('fs')
 	, markdown = require('markdown').markdown
 	, settings = require('../settings');
@@ -7,6 +7,7 @@ var fs = require('fs')
 exports.index = function(req, res){
 	fs.readdir(articles, function(err,files){
 		if (err){
+			console.log(err);
 			res.render('error', { title: 'Unable to read directory!', settings:settings});
 		} else {
 			var titles = {};
@@ -51,7 +52,7 @@ exports.article = function(req, res){
 		} else {
 			var doc = data.toString().split("\n\n");
 			var parsed = JSON.parse(doc[0]);
-			var output = ""
+			var output = "";
 			for(var i = 1; i < doc.length; i++){
 				output += markdown.toHTML(doc[i]);
 			}
@@ -88,7 +89,7 @@ exports.archive = function(req, res){
 					if (date[0] === req.params.year){
 						titles[parsed.date+"/"+parsed.slug] = parsed;
 					}
-					title = req.params.year + " Archive"
+					title = req.params.year + " Archive";
 				}
 			}
 			res.render('index', { title: title , titles: titles, settings: settings});

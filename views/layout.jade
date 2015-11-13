@@ -1,11 +1,11 @@
-!!! 5
+doctype html
 html
   head
     title #{settings.sitename} - #{title}
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
-    style(type='text/css')
-      body{padding-top:60px;}
+    link(rel='stylesheet', href='/stylesheets/custom.css')
   body
+  div.upper-header
     div.navbar.navbar-fixed-top
       div.navbar-inner
         div.container
@@ -17,4 +17,5 @@ html
               a(href='/page/about') About
     div.container
       div.row
+      
         block content
