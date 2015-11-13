@@ -1,38 +1,26 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Slim Node : A NodeJS Blogging engine, using flat files and Markdown" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Slim Node</title>
+    <meta charset="UTF-8">
+    <title>Slim Node by davidsivocha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Slim Node</h1>
+      <h2 class="project-tagline">A NodeJS Blogging engine, using flat files and Markdown</h2>
+      <a href="https://github.com/davidsivocha/slimnode" class="btn">View on GitHub</a>
+      <a href="https://github.com/davidsivocha/slimnode/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/davidsivocha/slimnode/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/davidsivocha/slimnode">View on GitHub</a>
-
-          <h1 id="project_title">Slim Node</h1>
-          <h2 id="project_tagline">A NodeJS Blogging engine, using flat files and Markdown</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/davidsivocha/slimnode/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/davidsivocha/slimnode/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="what-is-slimnode" class="anchor" href="#what-is-slimnode"><span class="octicon octicon-link"></span></a>What is SlimNode</h1>
+    <section class="main-content">
+      <h1>
+<a id="what-is-slimnode" class="anchor" href="#what-is-slimnode" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is SlimNode</h1>
 
 <p>Slim Node is a blog engine that makes use of Markdown flat files as a blogging engine, making it easy to update and edit, without having to worry about having a chunky CMS like wordpress or Drupal to manage your content. It is quick and light and the entire application logic (not including node dependencies) is only 56kb in size.</p>
 
@@ -41,7 +29,7 @@
 <p>You can use Git to push updates to the articles folder, making it easy to update.</p>
 
 <h1>
-<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to use</h1>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use</h1>
 
 <p>To install, copy to your server and run <code>npm install</code> to ensure that the dependencies are installed. Then run <code>node app.js</code> to start your blog.</p>
 
@@ -70,7 +58,7 @@ Currently the only <em>required</em> fields are the <code>title</code>, <code>da
 <p>The slugs are identifiers to point at the file.</p>
 
 <h1>
-<a name="additional-notes" class="anchor" href="#additional-notes"><span class="octicon octicon-link"></span></a>Additional notes:</h1>
+<a id="additional-notes" class="anchor" href="#additional-notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additional notes:</h1>
 
 <p>The blog articles should be constructed in Markdown. This provides formatting. 
 If you want to include images in your articles upload them to the <code>public/images</code> folder. To link to them use <code>![Alt Text](/image/yourimage.jpg "Optional title")</code> </p>
@@ -78,7 +66,7 @@ If you want to include images in your articles upload them to the <code>public/i
 <p>Other than that, enjoy. If you have any issues or need any help raise an issue!</p>
 
 <h1>
-<a name="templating" class="anchor" href="#templating"><span class="octicon octicon-link"></span></a>Templating</h1>
+<a id="templating" class="anchor" href="#templating" aria-hidden="true"><span class="octicon octicon-link"></span></a>Templating</h1>
 
 <p>Templates are all controlled by <a href="http://jade-lang.com/">jade</a> and there are 4 Main files for you to worry about.</p>
 
@@ -91,8 +79,10 @@ If you want to include images in your articles upload them to the <code>public/i
 <code>article.jade</code> - This is a page that displays the articles</li>
 <li>
 <code>about.jade</code> - This is a static page that is used for the about. </li>
-</ul><h1>
-<a name="url-structure" class="anchor" href="#url-structure"><span class="octicon octicon-link"></span></a>Url Structure</h1>
+</ul>
+
+<h1>
+<a id="url-structure" class="anchor" href="#url-structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Url Structure</h1>
 
 <ul>
 <li>
@@ -109,33 +99,22 @@ If you want to include images in your articles upload them to the <code>public/i
 <code>/blog/:year/:month/:day/:article</code> - This is the permalink structure to an article</li>
 <li>
 <code>/page/:page</code> - This is a link to a static page</li>
-</ul><h1>
-<a name="about-slimnode" class="anchor" href="#about-slimnode"><span class="octicon octicon-link"></span></a>About SlimNode</h1>
+</ul>
+
+<h1>
+<a id="about-slimnode" class="anchor" href="#about-slimnode" aria-hidden="true"><span class="octicon octicon-link"></span></a>About SlimNode</h1>
 
 <p>Inpsired by an article on <a href="http://net.tutsplus.com">NetTuts</a> for a static file blog in PHP, I thought to myself "that would be way more badass in node". This is the result.
 This repo is maintained by <a href="https://github.com/davidsivocha" class="user-mention">@davidsivocha</a>. <a href="http://sivocha.com">Sivocha.com</a>/<a href="http://threehive.co.uk">ThreeHive</a>.</p>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Slim Node maintained by <a href="https://github.com/davidsivocha">davidsivocha</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/davidsivocha/slimnode">Slim Node</a> is maintained by <a href="https://github.com/davidsivocha">davidsivocha</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-43986260-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+    </section>
 
-
+  
   </body>
 </html>
