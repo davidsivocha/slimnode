@@ -1,8 +1,9 @@
-var articles = '../../articles';
-var static = '../../static';
-var fs = require('fs')
-	, markdown = require('markdown').markdown
-	, settings = require('../settings');
+var approot = __dirname,
+	articles = approot + '/../../articles',
+	static = approot + '/../../static',
+	fs = require('fs'),
+	markdown = require('markdown').markdown,
+	settings = require('../settings');
 
 exports.index = function(req, res){
 	fs.readdir(articles, function(err,files){
@@ -28,7 +29,7 @@ exports.index = function(req, res){
 };
 
 exports.page = function(req, res){
-	var page = static + '/' + req.params.page + '.txt'
+	var page = static + '/' + req.params.page + '.txt';
 	fs.readFile(page, 'utf-8', function(err, data){
 		if (err){
 			res.render('error', { title: '404', settings:settings});
@@ -45,7 +46,7 @@ exports.page = function(req, res){
 };
 
 exports.article = function(req, res){
-	var article = articles + '/' + req.params.year +'-'+ req.params.month +'-'+ req.params.day +'-'+req.params.article + '.txt'
+	var article = articles + '/' + req.params.year +'-'+ req.params.month +'-'+ req.params.day +'-'+req.params.article + '.txt';
 	fs.readFile(article, 'utf-8', function(err, data){
 		if (err){
 			res.render('error', { title: '404', settings:settings});

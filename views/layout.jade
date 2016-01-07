@@ -5,17 +5,26 @@ html
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/custom.css')
   body
-  div.upper-header
-    div.navbar.navbar-fixed-top
-      div.navbar-inner
-        div.container
-          a.brand(href='/') #{settings.sitename}
-          ul.nav
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      div.container
+        div.navbar-header
+          button(
+            type='button'
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-taget="slimnode-navigation"
+            aria-expanded=false
+          )
+            span.sr-only Toggle Navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href="/") #{settings.sitename}
+        #slimnode-navigation.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href="/") Home
             li
-              a(href='/') Home
-            li
-              a(href='/page/about') About
+              a(href="/page/about") About
     div.container
-      div.row
-      
-        block content
+      block content
