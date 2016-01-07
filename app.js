@@ -5,7 +5,6 @@ var express         = require('express') ,
     bodyParser      = require('body-parser'),
     methodOverride  = require('method-override'),
     morgan          = require('morgan'),
-    port            = settings.port,
     app             = express(),
     approot         = __dirname;
 
@@ -20,6 +19,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride());
 app.use('/', router);
 
-http.createServer(app).listen(port);
+http.createServer(app).listen(settings.port);
 
-console.log('Express server listening on port', port);
+console.log('Express server listening on port', settings.port);
+console.log(settings.development ? '**Dev Build**' : '**Production Build**');
